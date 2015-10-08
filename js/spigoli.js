@@ -25,8 +25,8 @@ angular.module('spigoli', ['ngCookies'])
     // Provides get and set metods.
     .factory('dataStore', ['$cookies',
         function($cookies) {
-            function storageAvailable(type) {
-                // Check if localStorage is available
+            // Check if localStorage is available
+            var storageAvailable = function(type) {
                 try {
                     var storage = window[type],
                         x = '__storage_test__';
@@ -36,7 +36,7 @@ angular.module('spigoli', ['ngCookies'])
                 } catch (e) {
                     return false;
                 }
-            }
+            };
 
             if (storageAvailable('localStorage')) {
                 // We can use localStorage
@@ -46,7 +46,7 @@ angular.module('spigoli', ['ngCookies'])
                     },
                     get: function(k) {
                         var data = localStorage.getItem(k);
-						return (data === null) ? [] : JSON.parse(data);
+                        return (data === null) ? [] : JSON.parse(data);
                     }
                 };
             } else {
@@ -57,8 +57,8 @@ angular.module('spigoli', ['ngCookies'])
                         return $cookies.put(k, JSON.stringify(v));
                     },
                     get: function(k) {
-						var cookie = $cookies.get(k);
-						return (cookie === undefined) ? [] : JSON.parse(cookie);
+                        var cookie = $cookies.get(k);
+                        return (cookie === undefined) ? [] : JSON.parse(cookie);
                     }
                 };
             }
