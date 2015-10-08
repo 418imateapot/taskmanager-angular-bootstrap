@@ -1,0 +1,26 @@
+{
+  "name": "newTodoAngular",
+  "version": "1.0.0",
+  "authors": [
+    "Eduardo Santarelli <eduardo.santarell@studio.unibo.it>"
+  ],
+  "description": "todo app",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-cookies": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}

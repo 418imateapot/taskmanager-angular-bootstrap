@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it" data-ng-app="spigoli">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spigoli</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body data-ng-controller="todoCtrl">
+
+    <!-- Bootstrap default navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a data-ng-bind="title" class="navbar-brand" href="#">Brand</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main container -->
+    <div class="container">
+
+        <!-- form control -->
+        <form class="row form-inline">
+            <div class="form-group">
+                <input type="text" data-ng-model="newTask.name" class="form-control" placeholder="nome">
+                <input type="text" data-ng-model="newTask.desc" class="form-control" placeholder="descrizione">
+                <button data-ng-click="save()" class="btn btn-primary">Aggiungi Task</button>
+            </div>
+        </form>
+
+        <!-- display data -->
+        <hr>
+        <ul data-ng-repeat="task in todos" class="list-group">
+            <li class="list-group-item">
+                <h4 data-ng-bind="task.name"> </h4>
+                <p data-ng-bind="task.desc"></p>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- js libraries -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <!-- application scripts -->
+    <script src="js/spigoli.js"></script>
+
+</body>
+
+</html>
